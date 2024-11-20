@@ -1,0 +1,16 @@
+.un {
+  display: inline-block;
+}
+
+.un:after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: rgb(45 212 191);
+  transition: 300ms;
+}
+
+.un:hover:after {
+  width: 100%;
+}

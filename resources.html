@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E3A8A', // Rich Deep Blue
+            secondary: '#FACC15', // Bright Gold
+            light: '#E5E7EB', // Soft Gray
+          },
+        },
+      },
+      plugins: [require('daisyui')],
+      daisyui: {
+        themes: ['corporate'],
+      },
+    };
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div id="navbar-container"></div>
+    <script>
+      // Load navbar.html and insert it into the #navbar-container
+      fetch("/components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-container").innerHTML = data;
+        });
+    </script>
+  </header>
+
+
+<section class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Hero Section -->
+  <section 
+  class="bg-cover h-[600px] mt-8 bg-center bg-fixed relative" 
+  style="background-image: url('/img/DALL·E\ 2024-11-21\ 01.04.50\ -\ A\ minimalistic\ and\ sleek\ design\ for\ a\ resource\ page\ banner\ for\ a\ university\ ranking\ system\ website.\ The\ image\ has\ a\ width\ of\ 150\ pixels\ and\ a\ height\ o.webp');">
+  
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="max-w-[600px] m-auto  h-full flex flex-col items-center justify-center relative z-10 gap-10">
+    <h1 class="text-teal-400 text-3xl">Our Commitment to Excellence</h1>
+    <p class="text-teal-400 text-xl text-center">We are dedicated to fostering excellence in education by providing accessible, equitable, and unbiased rankings that align with the values of innovation and knowledge.</p>
+    <a href="/ranking.html" class="btn border-[1px] border-teal-400 bg-teal-400 border-0 hover:bg-white  hover:shadow-lg hover:shadow-teal-400 transition-all duration-300">
+      Register Now
+    </a>
+  </div>
+</section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-10 space-y-20">
+    <!-- Data Sources Section -->
+    <section id="data-sources" class="space-y-6">
+      <h2 class="text-3xl font-bold text-black text-center">Trusted Data Sources</h2>
+      <p class="text-center text-gray-600">We gather data from reliable institutions to maintain the highest standards.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="card bg-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div class="card-body items-center  hover:shadow-lg hover:rounded-xl hover:shadow-teal-400 transition-all duration-300">
+            <img src="/img/Capture-removebg-preview.png" alt="Journal" class="w-24 rounded-full mx-auto mb-4">
+            <h3 class="card-title text-lg font-semibold text-center">Academic Journals</h3>
+            <p class="text-sm text-gray-600 text-center">Peer-reviewed journals ensure accuracy and trustworthiness.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card bg-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div class="card-body  items-center  hover:shadow-lg hover:rounded-xl hover:shadow-teal-400 transition-all duration-300">
+            <img src="/img/Capture2-removebg-preview.png" alt="Reports" class="w-24 rounded-full mx-auto mb-4">
+            <h3 class="card-title text-lg font-semibold text-center">University Reports</h3>
+            <p class="text-sm text-gray-600 text-center">Key metrics from institutions guide our rankings.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card bg-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div class="card-body  items-center  hover:shadow-lg hover:rounded-xl hover:shadow-teal-400 transition-all duration-300">
+            <img src="/img//Capture3-removebg-preview.png" alt="Data Sets" class="w-24 rounded-full mx-auto mb-4">
+            <h3 class="card-title text-lg font-semibold text-center">Public Data Sets</h3>
+            <p class="text-sm text-gray-600 text-center">Credible sources like UNESCO and government datasets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="space-y-6 flex flex-col items-center">
+      <h2 class="text-3xl font-bold text-black text-center">Our Esteemed Sponsors</h2>
+      <p class="text-center text-gray-600">We are proud to collaborate with these organizations.</p>
+      <div class="grid grid-cols-4 flex-wrap gap-24 ">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor1.png" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor2.jpg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor3.png" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor4.jpg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor5.jpg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor6.jpg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor7.jpg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor8.jpeg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor9.png" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor10.png" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor11.svg" alt="">
+        <img class="w-[120px] h-[100px]" src="/img/sponsor12.png" alt="">
+      </div>
+    </section>
+
+    <!-- Additional Resources Section -->
+<section id="additional-resources" class="py-12 bg-gray-50">
+  <h2 class="text-4xl font-extrabold text-primary text-center mb-8">Explore More Resources</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-16">
+    <!-- Card 1 -->
+    <div class="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="p-6 relative z-10">
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-primary">FAQs</h3>
+        <p class="mt-2 text-gray-600">Discover answers to the most common questions.</p>
+        <a href="#faq" class="inline-block mt-4 text-secondary font-semibold hover:underline">Learn More →</a>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="p-6 relative z-10">
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-primary">Ranking Methodology</h3>
+        <p class="mt-2 text-gray-600">Understand the detailed process behind our rankings.</p>
+        <a href="#criteria" class="inline-block mt-4 text-secondary font-semibold hover:underline">Learn More →</a>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="p-6 relative z-10">
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-primary">Interactive Tools</h3>
+        <p class="mt-2 text-gray-600">Compare and analyze universities easily.</p>
+        <a href="#tools" class="inline-block mt-4 text-secondary font-semibold hover:underline">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+
+</section>
+
+
+<!-- Footer -->
+
+
+<div id="footer-container"></div>
+    <script>
+      // Load navbar.html and insert it into the #navbar-container
+      fetch("/components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+    </script>
+
+
+</body>
+
+ 
+</html>
