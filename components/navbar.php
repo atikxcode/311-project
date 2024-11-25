@@ -22,9 +22,9 @@
         </button>
         <ul tabindex="0" class="menu bg menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
           <li><a href="/" class="hover:bg-white hover:text-teal-500">Home</a></li>
-          <li><a href="/about.html" class="hover:bg-white hover:text-teal-500">About</a></li>
-          <li><a href="#" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
-          <li><a href="/resources.html" class="hover:bg-white hover:text-teal-500">Resources</a></li>
+          <li><a href="/about.php" class="hover:bg-white hover:text-teal-500">About</a></li>
+          <li><a href="/ranking.php" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
+          <li><a href="/resources.php" class="hover:bg-white hover:text-teal-500">Resources</a></li>
         </ul>
       </div>
 
@@ -39,20 +39,19 @@
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-8">
         <li><a href="/" class="hover:bg-white hover:text-teal-500">Home</a></li>
-        <li><a href="/about.html" class="hover:bg-white hover:text-teal-500">About</a></li>
-        <li><a href="#" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
-        <li><a href="/resources.html" class="hover:bg-white hover:text-teal-500">Resources</a></li>
+        <li><a href="/about.php" class="hover:bg-white hover:text-teal-500">About</a></li>
+        <li><a href="/ranking.php" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
+        <li><a href="/resources.php" class="hover:bg-white hover:text-teal-500">Resources</a></li>
       </ul>
     </div>
 
     <!-- Navbar End -->
     <div class="navbar-end">
-      <a href="/login.html" class="text-[14px] px-4 py-3 font-semibold rounded-lg bg-teal-400 border-0 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black transition-all duration-300">
+      <a href="/login.php" class="text-[14px] px-4 py-3 font-semibold rounded-lg bg-teal-400 border-0 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black transition-all duration-300">
         Get Started
       </a>
     </div>
   </div>
-  
   
 </body>
 </html>

@@ -2,38 +2,30 @@
 <html lang="en" data-theme="light">
 <head>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
 </head>
 <body>
+  
+  <!-- Header -->
  
-
-  <header>
-    <div id="navbar-container"></div>
-    <script>
-      // Load navbar.html and insert it into the #navbar-container
-      fetch("/components/navbar.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("navbar-container").innerHTML = data;
-        });
-    </script>
-  </header>
+    <?php include 'components/navbar.php'; ?>
 
 
-
+  <!-- Login Form -->
   <div class="flex min-h-screen items-center justify-center bg-gray-100">
-    <div class="w-full  shadow-teal-400 max-w-md bg-white rounded-lg shadow-lg p-8">
+    <div class="w-full shadow-teal-400 max-w-md bg-white rounded-lg shadow-lg p-8">
       <h2 class="text-2xl font-bold text-center mb-6 underline underline-offset-4">Login</h2>
-      <form>
+      <form action="process_login.php" method="POST">
         <!-- Email Field -->
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
           <input
             type="email"
             id="email"
+            name="email"
             placeholder="Enter your email"
             class="w-full rounded-lg border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500" />
         </div>
@@ -43,6 +35,7 @@
           <input
             type="text"
             id="username"
+            name="username"
             placeholder="Enter your username"
             class="w-full rounded-lg border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500" />
         </div>
@@ -52,6 +45,7 @@
           <input
             type="password"
             id="password"
+            name="password"
             placeholder="Enter your password"
             class="w-full rounded-lg border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500" />
         </div>
@@ -63,23 +57,16 @@
         </button>
         <!-- Sign Up -->
         <div class="mt-4 text-center">
-          <a href="/signup.html" class="text-sm text-blue-500 hover:underline">Sign Up</a>
+          <a href="/signup.php" class="text-sm text-blue-500 hover:underline">Sign Up</a>
         </div>
       </form>
     </div>
   </div>
   
-
-  <div id="footer-container"></div>
-  <script>
-    // Load navbar.html and insert it into the #navbar-container
-    fetch("/components/footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      });
-  </script>
-
+  <!-- Footer -->
+  
+    <?php include 'components/footer.php'; ?>
+  
 
 </body>
 </html>
