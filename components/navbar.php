@@ -1,3 +1,10 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['email']);
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -25,6 +32,9 @@
           <li><a href="/about.php" class="hover:bg-white hover:text-teal-500">About</a></li>
           <li><a href="/ranking.php" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
           <li><a href="/resources.php" class="hover:bg-white hover:text-teal-500">Resources</a></li>
+          <?php if ($isLoggedIn): ?>
+            <li><a href="/update_ranking.php" class="hover:bg-white hover:text-teal-500">Update Rankings</a></li>
+          <?php endif; ?>
         </ul>
       </div>
 
@@ -42,14 +52,23 @@
         <li><a href="/about.php" class="hover:bg-white hover:text-teal-500">About</a></li>
         <li><a href="/ranking.php" class="hover:bg-white hover:text-teal-500">Ranking</a></li>
         <li><a href="/resources.php" class="hover:bg-white hover:text-teal-500">Resources</a></li>
+        <?php if ($isLoggedIn): ?>
+          <li><a href="/update_ranking.php" class="hover:bg-white hover:text-teal-500">Update Rankings</a></li>
+        <?php endif; ?>
       </ul>
     </div>
 
     <!-- Navbar End -->
     <div class="navbar-end">
-      <a href="/login.php" class="text-[14px] px-4 py-3 font-semibold rounded-lg bg-teal-400 border-0 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black transition-all duration-300">
-        Get Started
-      </a>
+      <?php if ($isLoggedIn): ?>
+        <a href="/logout.php" class="text-[14px] px-4 py-3 font-semibold rounded-lg bg-red-400 border-0 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black transition-all duration-300">
+          Sign Out
+        </a>
+      <?php else: ?>
+        <a href="/login.php" class="text-[14px] px-4 py-3 font-semibold rounded-lg bg-teal-400 border-0 hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black transition-all duration-300">
+          Get Started
+        </a>
+      <?php endif; ?>
     </div>
   </div>
   
