@@ -95,7 +95,7 @@
           <tbody class="block lg:table-row-group">
             <?php
             // Include the database connection
-            include 'db.php';
+            include './db.php';
 
             // Build the SQL query based on the filters
             $sql = "SELECT * FROM rankings WHERE 1=1"; // Base query

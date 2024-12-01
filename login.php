@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['message'])) {
+    echo "<div class='text-center text-red-500 mb-4'>{$_SESSION['message']}</div>";
+    unset($_SESSION['message']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -31,12 +40,12 @@
         </div>
         <!-- Username Field -->
         <div class="mb-4">
-          <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+          <label for="full_name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            placeholder="Enter your username"
+            id="full_name"
+            name="full_name"
+            placeholder="Enter your Full Name"
             class="w-full rounded-lg border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500" />
         </div>
         <!-- Password Field -->
