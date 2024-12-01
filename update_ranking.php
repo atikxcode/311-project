@@ -1,3 +1,14 @@
+<?php
+session_start(); // Start session to check logged-in user
+
+// Define admin email
+$adminEmail = "astaroth2077@gmail.com";
+
+// Check if user is logged in
+$isLoggedIn = isset($_SESSION['email']);
+$isAdmin = $isLoggedIn && $_SESSION['email'] === $adminEmail;
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -10,7 +21,7 @@
 <body>
   
   <!-- Header -->
-  <?php include 'components/navbar.php'; ?>
+  <?php include './components/navbar.php'; ?>
 
   <!-- Update/Add University -->
   <div class="bg-gray-100 min-h-screen p-6">
@@ -18,10 +29,21 @@
       <!-- Page Title -->
       <h2 class="text-3xl font-bold text-center mb-8 underline underline-offset-4">Update or Add University</h2>
       
+      <!-- Warning for non-admin users -->
+      <?php if (!$isAdmin): ?>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6" role="alert">
+          <strong>Access Denied:</strong> You are not an admin and cannot make any changes.
+        </div>
+      <?php endif; ?>
+
       <!-- Form for Adding/Updating -->
       <div class="bg-white shadow-md rounded-lg p-6">
         <h3 class="text-xl font-semibold mb-4">Update/Add University</h3>
-        <form action="process_update.php" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form 
+          action="process_update.php" 
+          method="POST" 
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          <?= !$isAdmin ? 'style="pointer-events: none; opacity: 0.6;"' : '' ?>>
           <!-- Rank -->
           <div>
             <label for="rank" class="block text-sm font-medium text-gray-700 mb-1">Rank</label>
